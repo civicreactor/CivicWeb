@@ -1,0 +1,41 @@
+
+{% extends 'base.html' %}
+{% block content %}
+     <div id="pattern" class="pattern">
+  	<ul class="list img-list">
+{% for i in result %}
+			<li style="float: left">
+            <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                <div class="flipper">
+                    <div class="front" style="background: url({{ url_for('static',filename='img/StarryNightDog.jpg')}})">
+						<h4 class="li-head">{{ i[0]['title']}}</h4>
+						<p class="li-sub">Summary of content</p>
+					</div>
+                   <div class="back" style="background:#f8f8f8;">
+                        <div class="back-logo">
+                            <img style="width: 100%; background: blue" src="{{ url_for('static',filename='img/StarryNightDog.jpg')}}">
+                        </div>
+                        <div class="back-title">{{ i[0]['title']}}</div>
+				        <p>Mozilla Web Developer, MooTools & jQuery Consultant, MooTools Core Developer, Javascript Fanatic, CSS Tinkerer, PHP Hacker, and web lover.</p>
+                        <p>{{ i[0]['desc'] }}</p>
+                   </div>
+                </div>
+            </div>
+
+
+
+
+
+{#				<a href="#" class="inner">#}
+{#					<div class="li-img">#}
+{#						<img src="http://bradfrost.github.com/this-is-responsive/patterns/images/fpo_square.png" alt="Image Alt Text" />#}
+{#					</div>#}
+{#					<div class="li-text">#}
+{#						<h4 class="li-head">{{ i[0]['title']}}</h4>#}
+{#						<p class="li-sub">Summary of content</p>#}
+{#					</div>#}
+{#				</a>#}
+			</li>
+{% endfor %}
+      </ul></div>
+{% endblock %}

@@ -1,0 +1,20 @@
+
+{% extends 'base.html' %}
+{% block content %}
+     <div id="pattern" class="pattern">
+  	<ul class="list img-list">
+{% for i in result %}
+			<li>
+				<a href="#" class="inner">
+					<div class="li-img">
+						<img src={{ url_for('static',filename='img/civicHack.png')}} alt="Image Alt Text" />
+					</div>
+					<div class="li-text">
+						<h4 class="li-head">{{ i[0]['name']}}</h4>
+						<p class="li-sub">Summary of content</p>
+					</div>
+				</a>
+			</li>
+{% endfor %}
+      </ul></div>
+{% endblock %}
